@@ -1,0 +1,76 @@
+/* ═══════════════════════════════════════
+   KIRO — Variabili, Reset, Utilities
+   ═══════════════════════════════════════ */
+:root {
+    --accent: #D4547A;
+    --accent-dark: #B8435F;
+    --bg: #FFF6F9;
+    --soft: #FCEEF3;
+    --muted: #EDCDD7;
+    --text: #2E1820;
+    --text-secondary: #8A6070;
+    --text-tertiary: #BBA0AC;
+    --dark: #1C0F14;
+    --dark2: #2A151C;
+    --green: #81C784;
+    --green-soft: #E8F5E9;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Nunito', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text);
+    background: var(--bg);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.tag {
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+    display: block;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+}

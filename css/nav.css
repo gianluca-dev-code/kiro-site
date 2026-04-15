@@ -1,0 +1,98 @@
+/* ═══════════════════════════════════════
+   NAV
+   ═══════════════════════════════════════ */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.4s ease;
+}
+
+nav.scrolled {
+    background: rgba(28, 15, 20, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 14px 0;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+
+nav .nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    letter-spacing: 6px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.logo-icon { flex-shrink: 0; }
+
+.nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links a {
+    color: rgba(255,255,255,0.85);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover { color: #fff; }
+
+.nav-cta {
+    background: var(--accent) !important;
+    color: #fff !important;
+    padding: 10px 28px !important;
+    border-radius: 50px;
+    font-weight: 600 !important;
+    font-size: 13px !important;
+    letter-spacing: 0.5px;
+    transition: background 0.3s, transform 0.3s !important;
+    display: inline-block;
+}
+
+.nav-cta:hover {
+    background: var(--accent-dark) !important;
+    transform: translateY(-1px);
+}
+
+.nav-mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav-mobile-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #fff;
+    margin: 5px 0;
+    transition: all 0.3s;
+    border-radius: 2px;
+}
