@@ -70,39 +70,6 @@ function getDayOfCycle(lastPeriodDate, cycleLength) {
     return day;
 }
 
-// Build calendar for next 28 days
-function buildCalendar(lastPeriodDate, cycleLength) {
-    const grid = document.getElementById('calendarGrid');
-    grid.innerHTML = '';
-    const start = new Date();
-    start.setHours(0, 0, 0, 0);
-    const last = new Date(lastPeriodDate);
-    last.setHours(0, 0, 0, 0);
-    const baseDiff = Math.floor((start - last) / (1000 * 60 * 60 * 24));
-
-    for (let i = 0; i < 28; i++) {
-        const currentDate = new Date(start);
-        currentDate.setDate(start.getDate() + i);
-        const dayOfCycle = ((baseDiff + i) % cycleLength) + 1;
-        const phase = getPhase(dayOfCycle, cycleLength);
-
-        const cell = document.createElement('div');
-        cell.className = `calendar-cell cell-${phase}`;
-        if (i === 0) cell.classList.add('today');
-
-        const emojiDiv = document.createElement('div');
-        emojiDiv.className = 'emoji';
-        emojiDiv.textContent = phases[phase].emoji;
-
-        const dateDiv = document.createElement('div');
-        dateDiv.textContent = currentDate.getDate();
-
-        cell.appendChild(emojiDiv);
-        cell.appendChild(dateDiv);
-        grid.appendChild(cell);
-    }
-}
-
 // Main calculate function
 document.getElementById('calcBtn').addEventListener('click', () => {
     const dateValue = dateInput.value;
@@ -129,8 +96,6 @@ document.getElementById('calcBtn').addEventListener('click', () => {
     document.getElementById('tipFitness').textContent = phaseData.tips.fitness;
     document.getElementById('tipBeauty').textContent = phaseData.tips.beauty;
     document.getElementById('tipVibes').textContent = phaseData.tips.vibes;
-
-    buildCalendar(dateValue, cycleLength);
 
     // Show result and scroll
     const result = document.getElementById('result');
