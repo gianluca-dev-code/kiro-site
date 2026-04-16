@@ -1,12 +1,14 @@
-// Nav scroll effect
+// Nav scroll effect (skip on inner pages where nav is always dark)
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 60) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
+if (navbar && !navbar.classList.contains('always-dark')) {
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 60) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+}
 
 // Scroll reveal
 const reveals = document.querySelectorAll('.reveal');
