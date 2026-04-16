@@ -2,13 +2,13 @@
    FAQ
    ═══════════════════════════════════════ */
 .faq {
-    padding: 100px 24px;
+    padding: 60px 24px;
     background: var(--soft);
 }
 
 .faq-header {
     text-align: center;
-    margin-bottom: 56px;
+    margin-bottom: 36px;
 }
 
 .faq-header h2 {

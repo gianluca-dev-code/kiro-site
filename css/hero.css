@@ -48,7 +48,7 @@
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--accent);
+    color: rgba(255,255,255,0.85);
     margin-bottom: 20px;
     opacity: 0;
     animation: fadeUp 0.8s 0.3s forwards;
