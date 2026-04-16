@@ -49,6 +49,30 @@
         padding: 14px 28px !important;
     }
 
+    .nav-dropdown-menu {
+        position: static;
+        transform: none;
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        border: none;
+        padding: 0 0 0 16px;
+        opacity: 1;
+        visibility: visible;
+        min-width: auto;
+        display: none;
+    }
+
+    .nav-dropdown.mobile-open .nav-dropdown-menu {
+        display: block;
+    }
+
+    .nav-dropdown-menu a {
+        padding: 10px 0;
+        font-size: 14px;
+        color: rgba(255,255,255,0.6);
+    }
+
     .nav-mobile-toggle {
         display: flex;
     }

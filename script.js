@@ -56,8 +56,8 @@ mobileToggle.addEventListener('click', () => {
     mobileToggle.setAttribute('aria-label', isOpen ? 'Chiudi menu' : 'Apri menu');
 });
 
-// Close mobile menu when link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
+// Close mobile menu when link is clicked (skip dropdown toggles)
+navLinks.querySelectorAll('a:not(.nav-dropdown-toggle)').forEach(link => {
     link.addEventListener('click', () => {
         navLinks.classList.remove('open');
         mobileToggle.classList.remove('active');
@@ -65,6 +65,17 @@ navLinks.querySelectorAll('a').forEach(link => {
         mobileToggle.setAttribute('aria-label', 'Apri menu');
     });
 });
+
+// Mobile dropdown toggle
+const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+if (dropdownToggle) {
+    dropdownToggle.addEventListener('click', (e) => {
+        if (window.innerWidth <= 640) {
+            e.preventDefault();
+            dropdownToggle.closest('.nav-dropdown').classList.toggle('mobile-open');
+        }
+    });
+}
 
 // Download button coming soon alert
 const downloadBtn = document.getElementById('downloadBtn');
