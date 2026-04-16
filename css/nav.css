@@ -32,9 +32,14 @@ nav .nav-inner {
 }
 
 .logo-img {
-    height: 38px;
+    height: 44px;
     width: auto;
     display: block;
+    transition: filter 0.3s ease;
+}
+
+nav.scrolled .logo-img {
+    filter: invert(1) brightness(1.1);
 }
 
 .logo-icon { flex-shrink: 0; }

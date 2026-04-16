@@ -75,6 +75,10 @@ footer {
     margin-bottom: 16px;
 }
 
+.footer-brand .logo-img {
+    filter: invert(1) brightness(1.1);
+}
+
 .footer-brand p {
     font-family: var(--font-body);
     font-size: 14px;
