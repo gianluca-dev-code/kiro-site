@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scopri in che fase del ciclo sei — Calcolo gratuito | Kiro</title>
+    <meta name="description" content="Calcola gratuitamente in che fase del ciclo mestruale sei oggi. Ricevi consigli su fitness, beauty e benessere personalizzati sulla tua fase.">
+    <meta name="keywords" content="fase ciclo, calcolo fase ciclo, fase mestruale, fase follicolare, fase ovulatoria, fase luteale, ciclo mestruale calcolo">
+    <meta name="theme-color" content="#D4547A">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.getkiroo.com/scopri-la-tua-fase.html">
+    <meta property="og:title" content="Scopri in che fase del ciclo sei — Calcolo gratuito">
+    <meta property="og:description" content="Calcola gratis in che fase del ciclo sei e ricevi consigli personalizzati.">
+    <meta property="og:image" content="https://www.getkiroo.com/images/hero-tramonto.jpg">
+    <meta property="og:locale" content="it_IT">
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        .fase-hero {
+            padding: 140px 24px 60px;
+            text-align: center;
+            background: linear-gradient(180deg, var(--soft) 0%, var(--bg) 100%);
+        }
+
+        .fase-hero .tag {
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .fase-hero h1 {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: clamp(36px, 6vw, 58px);
+            color: var(--text);
+            line-height: 1.1;
+            max-width: 760px;
+            margin: 0 auto 20px;
+        }
+
+        .fase-hero h1 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .fase-hero-sub {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        .fase-form-wrapper {
+            max-width: 520px;
+            margin: 0 auto;
+            padding: 40px 32px;
+            background: #fff;
+            border-radius: 24px;
+            border: 1px solid var(--muted);
+            box-shadow: 0 20px 60px rgba(212, 84, 122, 0.08);
+        }
+
+        .fase-form-row {
+            margin-bottom: 24px;
+            text-align: left;
+        }
+
+        .fase-form-row label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-secondary);
+            margin-bottom: 10px;
+        }
+
+        .fase-form-row input {
+            width: 100%;
+            padding: 16px 18px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: var(--text);
+            background: var(--bg);
+            border: 1.5px solid var(--muted);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .fase-form-row input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: #fff;
+        }
+
+        .fase-form-help {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            margin-top: 6px;
+        }
+
+        .fase-form-submit {
+            width: 100%;
+            padding: 16px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .fase-form-submit:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(212, 84, 122, 0.3);
+        }
+
+        /* RESULT */
+        .fase-result {
+            display: none;
+            padding: 80px 24px;
+            animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .fase-result.visible { display: block; }
+
+        .fase-result-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .fase-current {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .fase-emoji {
+            font-size: 64px;
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        .fase-current h2 {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: clamp(32px, 5vw, 48px);
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .fase-current h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .fase-current-day {
+            display: inline-block;
+            padding: 6px 16px;
+            background: var(--soft);
+            color: var(--accent);
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 20px;
+        }
+
+        .fase-current-desc {
+            font-size: 16px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .fase-tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 48px;
+        }
+
+        .fase-tip-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 32px 24px;
+            border: 1px solid var(--muted);
+            transition: transform 0.4s, box-shadow 0.4s;
+        }
+
+        .fase-tip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(212, 84, 122, 0.08);
+        }
+
+        .fase-tip-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--soft);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .fase-tip-card h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .fase-tip-card p {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* CALENDAR */
+        .fase-calendar {
+            background: #fff;
+            border-radius: 24px;
+            padding: 36px 28px;
+            border: 1px solid var(--muted);
+            margin-bottom: 48px;
+        }
+
+        .fase-calendar h3 {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .fase-calendar-sub {
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-tertiary);
+            margin-bottom: 28px;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 6px;
+        }
+
+        .calendar-cell {
+            aspect-ratio: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 13px;
+            font-weight: 500;
+            position: relative;
+            transition: transform 0.2s;
+        }
+
+        .calendar-cell.today {
+            box-shadow: 0 0 0 2px var(--accent);
+            font-weight: 700;
+        }
+
+        .calendar-cell .emoji {
+            font-size: 14px;
+            line-height: 1;
+            margin-bottom: 2px;
+        }
+
+        .cell-mestruale { background: #FFE5EC; color: #9B1C3E; }
+        .cell-follicolare { background: #E8F5E9; color: #2E7D32; }
+        .cell-ovulatoria { background: #FFF4E0; color: #B8722A; }
+        .cell-luteale { background: #F3E5F5; color: #6A1B9A; }
+
+        .calendar-legend {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 24px;
+            font-size: 12px;
+        }
+
+        .legend-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-secondary);
+        }
+
+        .legend-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* INFO SECTION */
+        .fase-info {
+            padding: 80px 24px;
+            background: var(--soft);
+        }
+
+        .fase-info-inner {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .fase-info h2 {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: clamp(28px, 4vw, 42px);
+            color: var(--text);
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .fase-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .fase-info-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 28px;
+            border: 1px solid var(--muted);
+        }
+
+        .fase-info-card h3 {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 400;
+            color: var(--text);
+            margin-bottom: 12px;
+        }
+
+        .fase-info-card h3 .days {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 1px;
+            display: block;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            font-family: var(--font-body);
+        }
+
+        .fase-info-card p {
+            font-size: 14px;
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* CTA FINALE */
+        .fase-cta {
+            padding: 100px 24px;
+            text-align: center;
+            background: var(--dark);
+        }
+
+        .fase-cta h2 {
+            font-family: var(--font-display);
+            font-weight: 300;
+            font-size: clamp(32px, 5vw, 48px);
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 16px;
+        }
+
+        .fase-cta h2 em {
+            font-style: italic;
+            color: var(--accent);
+        }
+
+        .fase-cta p {
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .fase-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--accent);
+            color: #fff;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .fase-cta-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 640px) {
+            .fase-tips-grid { grid-template-columns: 1fr; }
+            .fase-info-grid { grid-template-columns: 1fr; }
+            .calendar-cell { font-size: 11px; }
+            .calendar-cell .emoji { font-size: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo" aria-label="Kiro home">
+                <span class="logo-text">Kiro</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#features">Funzionalità</a></li>
+                <li><a href="index.html#faq">FAQ</a></li>
+                <li><a href="index.html#download" class="nav-cta">Prova gratis</a></li>
+            </ul>
+            <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="fase-hero">
+        <span class="tag">Tool gratuito</span>
+        <h1>Scopri in che <em>fase del ciclo</em> sei oggi</h1>
+        <p class="fase-hero-sub">Un calcolo scientifico basato sulla tua ultima mestruazione. Scopri la tua fase attuale, ricevi consigli personalizzati su fitness, beauty e benessere, e visualizza le prossime 4 settimane.</p>
+
+        <div class="fase-form-wrapper">
+            <div class="fase-form-row">
+                <label for="lastPeriod">Primo giorno dell'ultima mestruazione</label>
+                <input type="date" id="lastPeriod" required>
+                <p class="fase-form-help">Quando è iniziato il tuo ultimo ciclo?</p>
+            </div>
+            <div class="fase-form-row">
+                <label for="cycleLength">Durata media del ciclo (giorni)</label>
+                <input type="number" id="cycleLength" min="21" max="40" value="28" required>
+                <p class="fase-form-help">Se non sei sicura, lascia 28 giorni (la media)</p>
+            </div>
+            <button class="fase-form-submit" id="calcBtn">Scopri la tua fase</button>
+        </div>
+    </section>
+
+    <!-- RESULT -->
+    <section class="fase-result" id="result">
+        <div class="fase-result-inner">
+
+            <div class="fase-current">
+                <div class="fase-emoji" id="phaseEmoji">🌊</div>
+                <span class="fase-current-day" id="phaseDay">Giorno 1 del ciclo</span>
+                <h2>Sei nella fase <em id="phaseName">mestruale</em></h2>
+                <p class="fase-current-desc" id="phaseDesc"></p>
+            </div>
+
+            <div class="fase-tips-grid">
+                <div class="fase-tip-card">
+                    <div class="fase-tip-icon">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13h4"/><path d="M9 9v8"/><path d="M23 9v8"/><path d="M23 13h4"/><path d="M13 9v8"/><path d="M19 9v8"/><path d="M13 13h6"/></svg>
+                    </div>
+                    <h3>Fitness</h3>
+                    <p id="tipFitness"></p>
+                </div>
+                <div class="fase-tip-card">
+                    <div class="fase-tip-icon">
+                        <svg width="24" height="24" viewBox="0 0 36 36" fill="none" stroke="#D4547A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="18" cy="10" rx="3.5" ry="6"/>
+                            <ellipse cx="18" cy="26" rx="3.5" ry="6"/>
+                            <ellipse cx="10" cy="18" rx="6" ry="3.5"/>
+                            <ellipse cx="26" cy="18" rx="6" ry="3.5"/>
+                            <g transform="rotate(45 18 18)">
+                                <ellipse cx="18" cy="10" rx="3" ry="5"/>
+                                <ellipse cx="18" cy="26" rx="3" ry="5"/>
+                                <ellipse cx="10" cy="18" rx="5" ry="3"/>
+                                <ellipse cx="26" cy="18" rx="5" ry="3"/>
+                            </g>
+                            <circle cx="18" cy="18" r="2" fill="#D4547A"/>
+                        </svg>
+                    </div>
+                    <h3>Beauty</h3>
+                    <p id="tipBeauty"></p>
+                </div>
+                <div class="fase-tip-card">
+                    <div class="fase-tip-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 3L4 14h7l-1 7 9 -11h-7l1 -7z"/></svg>
+                    </div>
+                    <h3>Vibes</h3>
+                    <p id="tipVibes"></p>
+                </div>
+            </div>
+
+            <div class="fase-calendar">
+                <h3>Le tue prossime 4 settimane</h3>
+                <p class="fase-calendar-sub">Calendario personalizzato con le 4 fasi del ciclo</p>
+                <div class="calendar-grid" id="calendarGrid"></div>
+                <div class="calendar-legend">
+                    <span class="legend-item"><span class="legend-dot cell-mestruale"></span>Mestruale</span>
+                    <span class="legend-item"><span class="legend-dot cell-follicolare"></span>Follicolare</span>
+                    <span class="legend-item"><span class="legend-dot cell-ovulatoria"></span>Ovulatoria</span>
+                    <span class="legend-item"><span class="legend-dot cell-luteale"></span>Luteale</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFO FASI -->
+    <section class="fase-info">
+        <div class="fase-info-inner">
+            <h2>Le 4 fasi del ciclo mestruale</h2>
+            <div class="fase-info-grid">
+                <div class="fase-info-card">
+                    <h3><span class="days">🌊 Giorni 1-5</span>Fase mestruale</h3>
+                    <p>Il rivestimento dell'utero si sfalda. Estrogeni e progesterone sono ai minimi. Energia bassa, serve riposo e movimento dolce.</p>
+                </div>
+                <div class="fase-info-card">
+                    <h3><span class="days">🌱 Giorni 6-13</span>Fase follicolare</h3>
+                    <p>Gli estrogeni salgono rapidamente. Energia in crescita, umore positivo, focus alto. Il momento migliore per attività intense.</p>
+                </div>
+                <div class="fase-info-card">
+                    <h3><span class="days">☀️ Giorni 14-16</span>Fase ovulatoria</h3>
+                    <p>Picco di estrogeni e testosterone. Massima energia fisica e mentale, socialità e libido ai massimi. Sei al top.</p>
+                </div>
+                <div class="fase-info-card">
+                    <h3><span class="days">🌙 Giorni 17-28</span>Fase luteale</h3>
+                    <p>Il progesterone domina. Energia decrescente, focus interiore, possibile sensibilità pre-mestruale. Tempo di ascoltarsi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="fase-cta">
+        <h2>Vuoi questo ogni giorno,<br><em>personalizzato per te</em>?</h2>
+        <p>Kiro ti accompagna in ogni fase con piani fitness, consigli beauty e diario smart.</p>
+        <a href="index.html#download" class="fase-cta-btn">
+            Scarica Kiro gratis
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </a>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <a href="index.html" class="nav-logo">
+                    <span class="logo-text">Kiro</span>
+                </a>
+                <p>Benessere femminile potenziato dall'AI.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Prodotto</h4>
+                <ul>
+                    <li><a href="index.html#features">Funzionalità</a></li>
+                    <li><a href="scopri-la-tua-fase.html">Scopri la tua fase</a></li>
+                    <li><a href="index.html#faq">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legale</h4>
+                <ul>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini.html">Termini di servizio</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kiro — Bergamo, Italia</p>
+            <p>Tutti i diritti riservati</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="fase.js"></script>
+</body>
+</html>
