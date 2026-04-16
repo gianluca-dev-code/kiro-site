@@ -1,6 +1,3 @@
-/* ═══════════════════════════════════════
-   KIRO — Variabili, Reset, Utilities
-   ═══════════════════════════════════════ */
 :root {
     --accent: #D4547A;
     --accent-dark: #B8435F;
@@ -30,6 +27,11 @@ body {
     color: var(--text);
     background: var(--bg);
     overflow-x: hidden;
+}
+
+section[id],
+div[id] {
+    scroll-margin-top: 80px;
 }
 
 .container {

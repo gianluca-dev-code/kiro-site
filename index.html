@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kiro — Il tuo ciclo, la tua forza</title>
     <meta name="description" content="Kiro adatta fitness, beauty, diario e consigli alla fase del tuo ciclo mestruale. Potenziata dall'AI. Provalo gratis 14 giorni.">
+    <meta name="theme-color" content="#D4547A">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.getkiroo.com/">
+    <meta property="og:title" content="Kiro — Il tuo ciclo, la tua forza">
+    <meta property="og:description" content="Fitness, beauty, diario e consigli personalizzati sulla tua fase del ciclo. Potenziata dall'AI.">
+    <meta property="og:image" content="https://www.getkiroo.com/images/hero-tramonto.jpg">
+    <meta property="og:locale" content="it_IT">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kiro — Il tuo ciclo, la tua forza">
+    <meta name="twitter:description" content="Fitness, beauty, diario e consigli personalizzati sulla tua fase del ciclo.">
+    <meta name="twitter:image" content="https://www.getkiroo.com/images/hero-tramonto.jpg">
+
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,27 +32,18 @@
 </head>
 <body>
 
-    <!-- NAV -->
     <nav id="navbar">
         <div class="nav-inner">
-            <a href="#" class="nav-logo">
-                <svg class="logo-icon" width="30" height="28" viewBox="120 20 100 180" xmlns="http://www.w3.org/2000/svg">
-                    <ellipse cx="142" cy="108" rx="16" ry="82" fill="#D4547A"/>
-                    <ellipse cx="142" cy="112" rx="7" ry="58" fill="#FCEEF3"/>
-                    <g transform="rotate(30,198,134)">
-                        <ellipse cx="198" cy="102" rx="16" ry="82" fill="#D4547A"/>
-                        <ellipse cx="198" cy="106" rx="7" ry="58" fill="#FCEEF3"/>
-                    </g>
-                </svg>
-                <span>Kiro</span>
+            <a href="#" class="nav-logo" aria-label="Kiro home">
+                <img src="images/kiro-logo.png" alt="Kiro" class="logo-img">
             </a>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#features">Funzionalità</a></li>
                 <li><a href="#fitness">Fitness</a></li>
                 <li><a href="#faq">FAQ</a></li>
                 <li><a href="#download" class="nav-cta">Prova gratis</a></li>
             </ul>
-            <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Apri menu" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -47,9 +51,8 @@
         </div>
     </nav>
 
-    <!-- HERO -->
     <section class="hero">
-        <img src="images/hero-tramonto.jpg" alt="Ragazza al tramonto" class="hero-img">
+        <img src="images/hero-tramonto.jpg" alt="Donna al tramonto davanti al Golden Gate" class="hero-img">
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <span class="hero-tag">Benessere al femminile</span>
@@ -57,85 +60,151 @@
             <p class="hero-sub">Fitness, beauty, diario e consigli personalizzati sulla tua fase. Ogni giorno è diverso — Kiro lo sa.</p>
             <a href="#download" class="hero-btn">
                 Inizia gratis — 14 giorni
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
             </a>
         </div>
-        <div class="hero-scroll-hint">
+        <div class="hero-scroll-hint" aria-hidden="true">
             <span>Scopri</span>
             <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- PRIVACY BAR -->
     <div class="privacy-bar">
         <p>I tuoi dati sono tuoi. <strong>Non li venderemo mai a nessuno. Mai.</strong></p>
     </div>
 
-    <!-- SPOTLIGHT — Selfie caffè -->
     <section class="spotlight reveal">
         <div class="container">
             <div class="spotlight-grid">
                 <div class="spotlight-img">
-                    <img src="images/selfie-caffe.png" alt="Ragazza al caffè con selfie">
+                    <img src="images/selfie-caffe.png" alt="Donna sorridente al caffè con il telefono in mano">
                 </div>
                 <div class="spotlight-text">
                     <span class="tag">Sei tu, ogni giorno</span>
                     <h2>Inizia la giornata <em>ascoltandoti</em></h2>
                     <p>Un caffè, un selfie, due minuti per te. Kiro ti racconta come stai davvero: la tua pelle, la tua energia, il tuo umore — tutto in sintonia con la tua fase. Nessun giudizio, solo consapevolezza.</p>
                     <div class="spotlight-tags">
-                        <span class="chip">🌸 Beauty AI</span>
-                        <span class="chip">📓 Diario smart</span>
-                        <span class="chip">⚡ Energia</span>
+                        <span class="chip">
+                            <svg width="16" height="16" viewBox="0 0 36 36" fill="none" stroke="#D4547A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <ellipse cx="18" cy="10" rx="3.5" ry="6"/>
+                                <ellipse cx="18" cy="26" rx="3.5" ry="6"/>
+                                <ellipse cx="10" cy="18" rx="6" ry="3.5"/>
+                                <ellipse cx="26" cy="18" rx="6" ry="3.5"/>
+                                <circle cx="18" cy="18" r="2" fill="#D4547A"/>
+                            </svg>
+                            Beauty AI
+                        </span>
+                        <span class="chip">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="4" y="3" width="16" height="18" rx="2"/>
+                                <path d="M7 3v18"/>
+                                <path d="M11 8h6"/>
+                                <path d="M11 12h6"/>
+                                <path d="M11 16h4"/>
+                            </svg>
+                            Diario smart
+                        </span>
+                        <span class="chip">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M13 3L4 14h7l-1 7 9 -11h-7l1 -7z"/>
+                            </svg>
+                            Energia
+                        </span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
     <section class="features" id="features">
         <div class="features-header reveal">
-            <span class="tag">Tutto in una app</span>
+            <span class="tag">Le tue funzioni</span>
             <h2>Pensata per te,<br>in ogni fase</h2>
         </div>
         <div class="features-grid">
+
             <div class="feature-card reveal">
-                <div class="feature-icon">🌙</div>
+                <div class="feature-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M16 12a6 6 0 1 1 -6 -6a4 4 0 0 0 6 6z"/>
+                    </svg>
+                </div>
                 <h3>Ciclo</h3>
                 <p>Traccia il tuo ciclo con precisione scientifica. Calendario, fertilità e promemoria pillola — tutto a portata di tap.</p>
             </div>
+
             <div class="feature-card reveal">
-                <div class="feature-icon">🏋️‍♀️</div>
+                <div class="feature-icon">
+                    <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M5 13h4"/>
+                        <path d="M9 9v8"/>
+                        <path d="M23 9v8"/>
+                        <path d="M23 13h4"/>
+                        <path d="M13 9v8"/>
+                        <path d="M19 9v8"/>
+                        <path d="M13 13h6"/>
+                    </svg>
+                </div>
                 <h3>Fitness</h3>
                 <p>Piani di allenamento AI che cambiano con la tua fase. Intenso quando sei carica, leggero quando serve.</p>
             </div>
+
             <div class="feature-card reveal">
-                <div class="feature-icon">✨</div>
+                <div class="feature-icon">
+                    <svg width="26" height="26" viewBox="0 0 36 36" fill="none" stroke="#D4547A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <ellipse cx="18" cy="10" rx="3.5" ry="6"/>
+                        <ellipse cx="18" cy="26" rx="3.5" ry="6"/>
+                        <ellipse cx="10" cy="18" rx="6" ry="3.5"/>
+                        <ellipse cx="26" cy="18" rx="6" ry="3.5"/>
+                        <circle cx="18" cy="18" r="2" fill="#D4547A"/>
+                    </svg>
+                </div>
                 <h3>Beauty</h3>
                 <p>Consigli pelle, capelli e makeup basati sulla tua fase. Selfie settimanale con analisi AI personalizzata.</p>
             </div>
+
             <div class="feature-card reveal">
-                <div class="feature-icon">📓</div>
+                <div class="feature-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="4" y="3" width="16" height="18" rx="2"/>
+                        <path d="M7 3v18"/>
+                        <path d="M11 8h6"/>
+                        <path d="M11 12h6"/>
+                        <path d="M11 16h4"/>
+                    </svg>
+                </div>
                 <h3>Diario</h3>
                 <p>Umore, sonno, energia — tutto in un diario smart che ti aiuta a capire i tuoi pattern settimana dopo settimana.</p>
             </div>
+
             <div class="feature-card reveal">
-                <div class="feature-icon">🤖</div>
+                <div class="feature-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 3c.6 0 1.2.2 1.7.5L20 7a2 2 0 0 1 1 1.7v6.6a2 2 0 0 1 -1 1.7L13.7 20.5a3.4 3.4 0 0 1 -3.4 0L4 17a2 2 0 0 1 -1 -1.7V8.7a2 2 0 0 1 1 -1.7L10.3 3.5A3.4 3.4 0 0 1 12 3z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                </div>
                 <h3>AI personale</h3>
                 <p>Recap settimanali intelligenti, piani che si adattano e analisi che imparano da te. Powered by Claude.</p>
             </div>
+
             <div class="feature-card reveal">
-                <div class="feature-icon">🔒</div>
+                <div class="feature-icon">
+                    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#D4547A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <rect x="5" y="11" width="14" height="10" rx="2"/>
+                        <path d="M8 11V7a4 4 0 0 1 8 0v4"/>
+                    </svg>
+                </div>
                 <h3>Privacy totale</h3>
                 <p>I tuoi dati non vengono mai venduti. Selfie analizzati e cancellati. Il diario si resetta ogni 7 giorni.</p>
             </div>
+
         </div>
     </section>
 
-    <!-- SPLIT — FITNESS -->
     <section class="split" id="fitness">
         <div class="split-img">
-            <img src="images/fitness-rosa.jpg" alt="Ragazza in outfit fitness rosa">
+            <img src="images/fitness-rosa.jpg" alt="Donna in outfit fitness rosa">
         </div>
         <div class="split-text">
             <div class="split-text-inner reveal">
@@ -163,10 +232,9 @@
         </div>
     </section>
 
-    <!-- SEZIONE CUCINA — Split -->
-    <section class="split split-reverse">
+    <section class="split split-reverse" id="liberta">
         <div class="split-img">
-            <img src="images/cucina-sera.png" alt="Ragazza in cucina la sera con telefono">
+            <img src="images/cucina-sera.png" alt="Donna la sera, in un momento per sé">
         </div>
         <div class="split-text split-text-light">
             <div class="split-text-inner reveal">
@@ -177,70 +245,69 @@
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="faq-header reveal">
             <h2>Domande frequenti</h2>
         </div>
         <div class="faq-list">
             <div class="faq-item reveal">
-                <button class="faq-q">
+                <button class="faq-q" aria-expanded="false">
                     Kiro è gratuita?
-                    <span class="plus">+</span>
+                    <span class="plus" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-a"><div class="faq-a-inner">
                     Sì! Hai 14 giorni di prova gratuita con tutte le funzionalità. Dopo puoi scegliere il piano mensile a €7,99/mese o annuale a €59,99/anno.
                 </div></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-q">
+                <button class="faq-q" aria-expanded="false">
                     I miei dati sono al sicuro?
-                    <span class="plus">+</span>
+                    <span class="plus" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-a"><div class="faq-a-inner">
                     Assolutamente. I tuoi dati non vengono mai venduti a nessuno. I selfie vengono analizzati e immediatamente cancellati. Le note del diario si cancellano ogni 7 giorni. La tua privacy è sacra.
                 </div></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-q">
+                <button class="faq-q" aria-expanded="false">
                     Come funziona il piano fitness AI?
-                    <span class="plus">+</span>
+                    <span class="plus" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-a"><div class="faq-a-inner">
                     Kiro genera un piano settimanale personalizzato in base alla tua fase del ciclo, al tuo obiettivo, livello di esperienza e attrezzatura disponibile. Ogni 7 giorni ricevi un nuovo piano, e puoi sostituire singoli esercizi in qualsiasi momento.
                 </div></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-q">
+                <button class="faq-q" aria-expanded="false">
                     Il calcolo della fertilità è affidabile?
-                    <span class="plus">+</span>
+                    <span class="plus" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-a"><div class="faq-a-inner">
                     Il calcolo è basato sulla ricerca di Wilcox et al. pubblicata sul New England Journal of Medicine (1995), condotta su 625 cicli reali con misurazioni ormonali. Non sostituisce il consulto medico, ma è scientificamente solido.
                 </div></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-q">
+                <button class="faq-q" aria-expanded="false">
                     Su quali dispositivi funziona?
-                    <span class="plus">+</span>
+                    <span class="plus" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-a"><div class="faq-a-inner">
                     Kiro è disponibile su iOS (iPhone). La versione Android è in arrivo. L'app è sviluppata con React Native per garantire un'esperienza fluida e nativa.
                 </div></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-q">
+                <button class="faq-q" aria-expanded="false">
                     Cosa analizza il selfie beauty?
-                    <span class="plus">+</span>
+                    <span class="plus" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-a"><div class="faq-a-inner">
                     Scatti un selfie settimanale e l'AI analizza lo stato della tua pelle in relazione alla fase del ciclo, dandoti consigli personalizzati su skincare, capelli, makeup e profumo. La foto non viene mai salvata.
                 </div></div>
             </div>
             <div class="faq-item reveal">
-                <button class="faq-q">
+                <button class="faq-q" aria-expanded="false">
                     Posso cancellare l'abbonamento?
-                    <span class="plus">+</span>
+                    <span class="plus" aria-hidden="true">+</span>
                 </button>
                 <div class="faq-a"><div class="faq-a-inner">
                     Certo. Puoi cancellare in qualsiasi momento direttamente dall'app. Nessun vincolo, nessuna penale, nessuna domanda.
@@ -249,33 +316,24 @@
         </div>
     </section>
 
-    <!-- CTA FINALE -->
     <section class="cta-final" id="download">
-        <img src="images/amiche-ridono.jpg" alt="" class="cta-final-bg">
+        <img src="images/amiche-ridono.jpg" alt="" class="cta-final-bg" aria-hidden="true">
         <div class="cta-final-content reveal">
             <h2>Inizia a vivere<br>al tuo <em>ritmo</em></h2>
             <p>14 giorni gratuiti. Nessun impegno. Solo tu.</p>
-            <a href="#" class="hero-btn">
+            <a href="#" class="hero-btn" id="downloadBtn">
                 Scarica Kiro
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
             </a>
+            <p class="cta-coming">Disponibile presto su App Store</p>
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
         <div class="footer-inner">
             <div class="footer-brand">
-                <a href="#" class="nav-logo">
-                    <svg class="logo-icon" width="30" height="28" viewBox="120 20 100 180" xmlns="http://www.w3.org/2000/svg">
-                        <ellipse cx="142" cy="108" rx="16" ry="82" fill="#D4547A"/>
-                        <ellipse cx="142" cy="112" rx="7" ry="58" fill="#FCEEF3"/>
-                        <g transform="rotate(30,198,134)">
-                            <ellipse cx="198" cy="102" rx="16" ry="82" fill="#D4547A"/>
-                            <ellipse cx="198" cy="106" rx="7" ry="58" fill="#FCEEF3"/>
-                        </g>
-                    </svg>
-                    <span>Kiro</span>
+                <a href="#" class="nav-logo" aria-label="Kiro home">
+                    <img src="images/kiro-logo.png" alt="Kiro" class="logo-img">
                 </a>
                 <p>Benessere femminile potenziato dall'AI. Il tuo ciclo, la tua forza.</p>
             </div>
@@ -283,31 +341,27 @@
                 <h4>Prodotto</h4>
                 <ul>
                     <li><a href="#features">Funzionalità</a></li>
-                    <li><a href="#">Come funziona</a></li>
+                    <li><a href="#fitness">Fitness</a></li>
                     <li><a href="#faq">FAQ</a></li>
-                    <li><a href="#">Prezzi</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Azienda</h4>
                 <ul>
-                    <li><a href="#">Chi siamo</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contatti</a></li>
+                    <li><a href="mailto:hello@getkiroo.com">Contatti</a></li>
                 </ul>
             </div>
             <div class="footer-col">
                 <h4>Legale</h4>
                 <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Termini di servizio</a></li>
-                    <li><a href="#">Cookie</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="termini.html">Termini di servizio</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Kiro. Tutti i diritti riservati.</p>
-            <p>Made with 💗 in Bergamo</p>
+            <p>&copy; 2026 Kiro — Bergamo, Italia</p>
+            <p>Tutti i diritti riservati</p>
         </div>
     </footer>
 

@@ -31,29 +31,44 @@ document.querySelectorAll('.faq-q').forEach(btn => {
         document.querySelectorAll('.faq-item').forEach(i => {
             i.classList.remove('open');
             i.querySelector('.faq-a').style.maxHeight = '0';
+            i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
         });
 
         // Open clicked if was closed
         if (!isOpen) {
             item.classList.add('open');
             answer.style.maxHeight = answer.scrollHeight + 'px';
+            btn.setAttribute('aria-expanded', 'true');
         }
     });
 });
 
-// Mobile toggle
+// Mobile nav toggle
 const mobileToggle = document.getElementById('mobileToggle');
-const navLinks = document.querySelector('.nav-links');
+const navLinks = document.getElementById('navLinks');
+
 mobileToggle.addEventListener('click', () => {
-    const isVisible = navLinks.style.display === 'flex';
-    navLinks.style.display = isVisible ? 'none' : 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '100%';
-    navLinks.style.left = '0';
-    navLinks.style.right = '0';
-    navLinks.style.background = 'rgba(28,15,20,0.95)';
-    navLinks.style.padding = '24px';
-    navLinks.style.gap = '20px';
-    navLinks.style.backdropFilter = 'blur(20px)';
+    const isOpen = navLinks.classList.toggle('open');
+    mobileToggle.classList.toggle('active');
+    mobileToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    mobileToggle.setAttribute('aria-label', isOpen ? 'Chiudi menu' : 'Apri menu');
 });
+
+// Close mobile menu when link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        mobileToggle.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        mobileToggle.setAttribute('aria-label', 'Apri menu');
+    });
+});
+
+// Download button coming soon alert
+const downloadBtn = document.getElementById('downloadBtn');
+if (downloadBtn) {
+    downloadBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Kiro sarà disponibile presto su App Store! Iscriviti per essere tra le prime a saperlo.');
+    });
+}

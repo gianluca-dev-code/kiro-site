@@ -1,6 +1,3 @@
-/* ═══════════════════════════════════════
-   SPOTLIGHT — Selfie caffè
-   ═══════════════════════════════════════ */
 .spotlight {
     padding: 100px 24px;
 }
@@ -59,20 +56,23 @@
 }
 
 .chip {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     background: var(--soft);
     color: var(--text);
     font-family: var(--font-body);
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 500;
     padding: 8px 16px;
     border-radius: 50px;
     border: 1px solid var(--muted);
 }
 
-/* ═══════════════════════════════════════
-   FEATURES GRID
-   ═══════════════════════════════════════ */
+.chip svg {
+    flex-shrink: 0;
+}
+
 .features {
     padding: 100px 24px;
     background: var(--soft);
@@ -120,8 +120,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
     margin-bottom: 20px;
+}
+
+.feature-icon svg {
+    width: 26px;
+    height: 26px;
 }
 
 .feature-card h3 {
@@ -140,9 +144,6 @@
     line-height: 1.7;
 }
 
-/* ═══════════════════════════════════════
-   SPLIT SECTIONS
-   ═══════════════════════════════════════ */
 .split {
     display: grid;
     grid-template-columns: 1fr 1fr;
